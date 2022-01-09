@@ -1,8 +1,8 @@
 # UVRS2021_app
+A Dash app deployed via github actions.
 
-This is a Dash app created using examples from
-[the callback documentation](https://dash.plotly.com/basic-callbacks)
-and deployed following
-[these instructions](https://dash.plotly.com/deployment)
-via
-[github actions](https://github.com/marketplace/actions/deploy-to-heroku).
+Helpful references:
+* [https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index](https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index)
+* [https://dash.plotly.com/basic-callbacks](https://dash.plotly.com/basic-callbacks)
+* [https://dash.plotly.com/deployment](https://dash.plotly.com/deployment)
+* [https://github.com/marketplace/actions/deploy-to-heroku](https://github.com/marketplace/actions/deploy-to-heroku)
