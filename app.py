@@ -20,16 +20,15 @@ available_indicators = df["Age Group"].unique()
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    html.H1("Upper Valley Running Series 2021"),
+    html.H1("2021 Upper Valley Running Series Scorecard"),
     html.Div("Select Age Group"),
-    html.Div([
+    html.Div(
         dcc.Dropdown(
             id="age-group",
             options=[{'label': i, 'value': i} for i in available_indicators],
             value="Age Group"
-        ),
-        dcc.Graph(id="main_graph")
-    ])
+        ), style={'width': '20%'}),
+    dcc.Graph(id="main_graph")
 ])
 
 @app.callback(
