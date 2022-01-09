@@ -8,17 +8,19 @@ A Dash app deployed via github actions.
 * `Procfile` is necessary for Heroku deployment
 * `.github/workflows/main.yml` controls github action to deploy to Heroku on a push
 
-## `input_data/`
+## python code
+* `utils/` directory with the python code
+
+## data
+
+### `input_data/`
 * `private_data/` contains a local snapshot of the UVRC membership list (not committed for privacy)
 * `race_data/` directory contains the tabular data for the UVRS races
 
-## `output_data/`
+### `output_data/`
 * `df.csv` output table to be used by `app.py`
 * `participation.csv` table with columns `name` and `number_of_races_participated_in`
 * `rosters/` tables with all matched UVRS participants for a given membership snapshot (with private data ignored for privacy)
-
-## python code
-* `utils/` directory with the python code
 
 ## References
 * [https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index](https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index)
