@@ -1,12 +1,13 @@
 # UVRS2021_app
 A Dash app deployed via github actions.
 
-## github, deployment, and environment
+## github, deployment, environment, and tests
 * `build.py` script to build `output_data` from `input_data`
 * `app.py` contains the frontend logic for the Dash app
 * `requirements.txt` contains the dependencies for the virtualenv
 * `Procfile` is necessary for Heroku deployment
 * `.github/workflows/main.yml` controls github action to deploy to Heroku on a push
+* `tests/` just in case
 
 ## python code
 * `utils/` directory with the backend python code
