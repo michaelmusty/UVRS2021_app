@@ -8,6 +8,8 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
+# df = pd.read_csv('df.csv')
+
 df = pd.DataFrame({
     "Individual": ["Mike Musty", "Nicole Labrecque", "Alison Tavel", "Mike Musty", "Nicole Labrecque", "Alison Tavel"],
     "Score": [90, 100, 82, 82, 90, 100],
