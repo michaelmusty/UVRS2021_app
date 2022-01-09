@@ -18,6 +18,7 @@ df = pd.DataFrame({
 available_indicators = df["Age Group"].unique()
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     html.H1("2021 Upper Valley Running Series Scorecard"),
