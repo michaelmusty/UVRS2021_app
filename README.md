@@ -14,7 +14,7 @@ A Dash app deployed via github actions.
 ## data
 
 ### `input_data/`
-* `private_data/` contains a local snapshot of the UVRC membership list (not committed for privacy)
+* `rosters_private/` contains local snapshots of the UVRC membership list (not committed for privacy)
 * `race_data/` directory contains the tabular data for the UVRS races
 
 ### `output_data/`
