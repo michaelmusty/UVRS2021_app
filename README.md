@@ -27,7 +27,8 @@ A dashboard for [UVRS](https://uppervalleyrunningclub.org/2021-upper-valley-runn
 * `race_data/` directory contains the tabular data for the UVRS races, directories are named with race dates of the form YYYYMMDD
 
 ### `output_data/`
-* `tables/df_YYYYMMDDHHMMSS.csv` snapshot scores table to be used by `app.py`
+* `tables/df_YYYYMMDDHHMMSS.csv` snapshot scores table to be used by `app.py` including all races
+* `filtered_tables/df_YYYYMMDDHHMMSS.csv` snapshot scores table to be used by `app.py` filtering top N races for each individual
 * `participation/snapshot_YYYYMMDDHHMMSS.csv` snapshot of all matched UVRS participants for a given membership snapshot (with private data excluded for privacy) with columns `name`, `age_group`, `number_of_races_participated_in`, `total_score`
 
 ## References
