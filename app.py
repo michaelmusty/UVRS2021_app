@@ -8,14 +8,22 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
-# df = pd.read_csv('output_data/df.csv')
+import os
+import glob
 
-df = pd.DataFrame({
-    "Individual": ["Mike Musty", "Nicole Labrecque", "Alison Tavel", "Mike Musty", "Nicole Labrecque", "Alison Tavel"],
-    "Score": [90, 100, 82, 82, 90, 100],
-    "Race": ["Shamrock Shuffle", "Shamrock Shuffle", "Shamrock Shuffle", "Sprouty", "Sprouty", "Sprouty"],
-    "Age Group": ["M3039", "F3039", "F3039", "M3039", "F3039", "F3039"]
-})
+# # df for testing app
+# df = pd.DataFrame({
+#     "Individual": ["Mike Musty", "Nicole Labrecque", "Alison Tavel", "Mike Musty", "Nicole Labrecque", "Alison Tavel"],
+#     "Score": [90, 100, 82, 82, 90, 100],
+#     "Race": ["Shamrock Shuffle", "Shamrock Shuffle", "Shamrock Shuffle", "Sprouty", "Sprouty", "Sprouty"],
+#     "Age Group": ["M3039", "F3039", "F3039", "M3039", "F3039", "F3039"]
+# })
+
+
+# read latest table from output_data/tables/
+path = os.path.abspath("output_data/tables/")  # absolute path without / at the end
+list_of_filenames = glob.glob(f"{path}/*")
+df = pd.read_csv(max(list_of_filenames, key=os.path.getctime))
 
 available_indicators = df["Age Group"].unique()
 
