@@ -9,6 +9,8 @@ from utils.racer import Racer
 from utils.person import Person
 from utils.participant import Participant
 
+from leven import levenshtein
+
 def get_participants(people: List[Person], races: List[Race], for_scoring: bool) -> List[Participant]:
     """compute list of participants by checking if each person is a participant"""
     participants: List[Participant] = []
@@ -68,7 +70,13 @@ def is_participant_in_race(person: Person, race: Race, for_scoring: bool) -> Tup
     elif len(matched_racers) == 1:
         return (True, matched_racers[0])
     else:
-        raise Exception(f"Number of matched racers = {len(matched_racers)} which should not occur")
+        raise Exception(
+            f"""
+            Number of matched racers = {len(matched_racers)} which should not occur:\n
+            {person.name()} matched with\n
+            {[x.get_name() for x in matched_racers]}
+            """
+        )
 
 
 # TODO: add other match algorithms
@@ -76,5 +84,15 @@ def does_person_match_racer(person: Person, racer: Racer, match_strictness: str 
     """true if person matches racer based on names only"""
     if match_strictness == "exact":
         return person.name() == racer.get_name()
+    elif match_strictness == "leven":
+        THRESHOLD = 5
+        d = levenshtein(person.name(), racer.get_name())
+        assert d >= 0
+        if d <= THRESHOLD:
+            logger.info(f"\nMATCH: levenshtein({person.name()}, {racer.get_name()}) = {d} <= thresh={THRESHOLD}")
+            return True
+        else:
+            logger.info(f"\nNOT A MATCH: levenshtein({person.name()}, {racer.get_name()}) = {d} > thresh={THRESHOLD}")
+            return False
     else:
         raise Exception(f"match_strictness = {match_strictness} not implemented!")
