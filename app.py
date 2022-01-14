@@ -11,6 +11,10 @@ import pandas as pd
 import os
 import glob
 
+import plotly.io as pio
+
+pio.templates.default = "plotly_dark"
+
 # # df for testing app
 # df = pd.DataFrame({
 #     "Individual": ["Mike Musty", "Nicole Labrecque", "Alison Tavel", "Mike Musty", "Nicole Labrecque", "Alison Tavel"],
