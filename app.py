@@ -31,6 +31,7 @@ df.sort_values(by=['Race'], inplace=True)
 available_indicators = df["Age Group"].unique()
 
 app = dash.Dash(__name__)
+app.title = "2021 UVRS Scorecard"
 server = app.server
 
 app.layout = html.Div([
