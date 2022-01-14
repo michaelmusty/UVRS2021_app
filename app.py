@@ -24,6 +24,9 @@ import glob
 path = os.path.abspath("output_data/tables/")  # absolute path without / at the end
 list_of_filenames = glob.glob(f"{path}/*")
 df = pd.read_csv(max(list_of_filenames, key=os.path.getctime))
+df.sort_values(by=['Race'], inplace=True)
+
+# TODO: filter df to only include top N scores for an individual
 
 available_indicators = df["Age Group"].unique()
 
