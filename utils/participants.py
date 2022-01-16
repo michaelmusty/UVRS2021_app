@@ -82,10 +82,16 @@ def is_participant_in_race(person: Person, race: Race, for_scoring: bool) -> Tup
 
 
 # TODO: add other match algorithms
-def does_person_match_racer(person: Person, racer: Racer, match_algorithm: str = "rule_based") -> bool:
+def does_person_match_racer(person: Person, racer: Racer, match_algorithm: str = "exact") -> bool:
     """true if person matches racer based on names only"""
     if match_algorithm == "exact":
         return person.name() == racer.get_name()
+    elif match_algorithm == "rule_based":
+        raise Exception(f"rule_based not implemented yet")
+        # condition_1 = person.last == racer.lastname
+        # THRESHOLD = 3
+        # condition_2 = levenshtein(person.first, racer.firstname) <= THRESHOLD
+        # return condition_1 and condition_2
     elif match_algorithm == "leven":
         THRESHOLD = 5
         d = levenshtein(person.name(), racer.get_name())

@@ -65,3 +65,6 @@ Successfully installed leven-1.0.4 nose-1.3.7
 * [https://developers.google.com/sheets/api/quickstart/python](https://developers.google.com/sheets/api/quickstart/python)
 * [word2vec](https://radimrehurek.com/gensim/models/word2vec.html)
 * [https://github.com/plotly/dash-pivottable](https://github.com/plotly/dash-pivottable)
+* [https://bergvca.github.io/2017/10/14/super-fast-string-matching.html](https://bergvca.github.io/2017/10/14/super-fast-string-matching.html)
+* [https://bergvca.github.io/2020/01/02/string-grouper.html](https://bergvca.github.io/2020/01/02/string-grouper.html)
+* [https://github.com/Bergvca/string_grouper](https://github.com/Bergvca/string_grouper)
