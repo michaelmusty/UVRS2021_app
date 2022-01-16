@@ -48,13 +48,14 @@ Successfully installed leven-1.0.4 nose-1.3.7
 ### `input_data/`
 * `rosters_private/` contains local snapshots of the UVRC membership list (not committed for privacy)
 * `race_data/` directory contains the tabular data for the UVRS races, directories are named with race dates of the form YYYYMMDD
+* `race_data_raw/` directory contains raw race data which we process (sometimes by hand unfortunately) before placing in `race_data/`
 
 ### `output_data/`
 * `tables/df_YYYYMMDDHHMMSS.csv` snapshot scores table to be used by `app.py` including all races
 * `filtered_tables/df_YYYYMMDDHHMMSS.csv` snapshot scores table to be used by `app.py` filtering top N races for each individual
 * `participation/snapshot_YYYYMMDDHHMMSS.csv` snapshot of all matched UVRS participants for a given membership snapshot (with private data excluded for privacy) with columns `name`, `age_group`, `number_of_races_participated_in`, `total_score`
 
-## References
+## references
 * [https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index](https://stackoverflow.com/questions/58873457/gunicorn-20-failed-to-find-application-object-app-server-in-index)
 * [https://dash.plotly.com/basic-callbacks](https://dash.plotly.com/basic-callbacks)
 * [https://dash.plotly.com/deployment](https://dash.plotly.com/deployment)
@@ -62,3 +63,5 @@ Successfully installed leven-1.0.4 nose-1.3.7
 * [https://stackoverflow.com/questions/54106071/how-can-i-set-up-a-virtual-environment-for-python-in-visual-studio-code](https://stackoverflow.com/questions/54106071/how-can-i-set-up-a-virtual-environment-for-python-in-visual-studio-code)
 * [https://developers.google.com/drive/api/v3/quickstart/python](https://developers.google.com/drive/api/v3/quickstart/python)
 * [https://developers.google.com/sheets/api/quickstart/python](https://developers.google.com/sheets/api/quickstart/python)
+* [word2vec](https://radimrehurek.com/gensim/models/word2vec.html)
+* [https://github.com/plotly/dash-pivottable](https://github.com/plotly/dash-pivottable)

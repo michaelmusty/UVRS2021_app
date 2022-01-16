@@ -14,15 +14,19 @@ import glob
 import plotly.io as pio
 pio.templates.default = "plotly_dark"
 
-# DATA_DIRECTORY_TO_USE = "output_data/tables/"
-DATA_DIRECTORY_TO_USE = "output_data/filtered_tables/"
+# read table with all race scores
 
-# read table
-
-path = os.path.abspath(DATA_DIRECTORY_TO_USE)
+path = os.path.abspath("output_data/tables/")
 list_of_filenames = glob.glob(f"{path}/*")
 df = pd.read_csv(max(list_of_filenames, key=os.path.getctime))
 df.sort_values(by=['Race'], inplace=True)
+
+# read table with only top N race scores
+
+path = os.path.abspath("output_data/filtered_tables")
+list_of_filenames = glob.glob(f"{path}/*")
+df_filtered = pd.read_csv(max(list_of_filenames, key=os.path.getctime))
+df_filtered.sort_values(by=['Race'], inplace=True)
 
 # all the app stuff
 

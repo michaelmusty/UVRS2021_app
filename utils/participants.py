@@ -11,6 +11,8 @@ from utils.participant import Participant
 
 from leven import levenshtein
 
+from utils.gensim_models import word2vec_distance
+
 def get_participants(people: List[Person], races: List[Race], for_scoring: bool) -> List[Participant]:
     """compute list of participants by checking if each person is a participant"""
     participants: List[Participant] = []
@@ -80,11 +82,11 @@ def is_participant_in_race(person: Person, race: Race, for_scoring: bool) -> Tup
 
 
 # TODO: add other match algorithms
-def does_person_match_racer(person: Person, racer: Racer, match_strictness: str = "exact") -> bool:
+def does_person_match_racer(person: Person, racer: Racer, match_algorithm: str = "rule_based") -> bool:
     """true if person matches racer based on names only"""
-    if match_strictness == "exact":
+    if match_algorithm == "exact":
         return person.name() == racer.get_name()
-    elif match_strictness == "leven":
+    elif match_algorithm == "leven":
         THRESHOLD = 5
         d = levenshtein(person.name(), racer.get_name())
         assert d >= 0
@@ -94,5 +96,7 @@ def does_person_match_racer(person: Person, racer: Racer, match_strictness: str 
         else:
             logger.info(f"\nNOT A MATCH: levenshtein({person.name()}, {racer.get_name()}) = {d} > thresh={THRESHOLD}")
             return False
+    elif match_algorithm== "word2vec":
+        raise Exception(f"word2vec not implemented yet")
     else:
-        raise Exception(f"match_strictness = {match_strictness} not implemented!")
+        raise Exception(f"match_algorithm= {match_algorithm} not implemented!")
