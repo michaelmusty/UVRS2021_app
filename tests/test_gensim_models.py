@@ -1,7 +1,10 @@
+import pytest
+
 from loguru import logger
 
 from utils.gensim_models import word2vec_distance
 
+@pytest.mark.skip
 def test_word2vec_distance():
     d = word2vec_distance("Scott King", "James Scott King")
     logger.info(f"d(Scott King, James Scott King) = {d}")
